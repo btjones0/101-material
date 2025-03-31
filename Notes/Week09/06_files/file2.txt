@@ -1,0 +1,4 @@
+This is another file.
+It has different words.
+And more lines!
+Four this time.

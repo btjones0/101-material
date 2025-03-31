@@ -1,0 +1,4 @@
+(1): (This is a text file.)
+(2): (This is the second line of the text file.)
+(3): (This is the third line of the text file.)
+(4): (Goodbye!)
