@@ -1,0 +1,60 @@
+\documentclass[12pt]{article}
+
+\pagenumbering{gobble}
+\usepackage{mypython, mymath}
+
+\usepackage[margin=0.6in]{geometry}
+
+\begin{document}
+\begin{center}
+   \LARGE Lecture 10
+\end{center}
+
+\section*{Queries}
+
+Mention that the last one is a fold pattern!  They'll see more later/also in
+Lab 6.
+
+\section{List of Tuples}
+
+Go through the example (list comprehension mapping $x \rightarrow (x, x^2)$ in
+a list).  Also print specific tuples and then specific values from the tuples.
+
+\section{Project 3}
+
+Talk about list of lists and Project 3.  Should start \emph{NOW}.  Read through
+the specification carefully.  Go over description and then walk through big
+example \lstinline[language=]{p1.in}.  Quit after a bit and then run program to
+solve it.  It worked!  Now work though entire little example.
+
+\section{Lists of Lists}
+
+Write a 2 dimensional sum function.
+
+\section{Strings}
+
+How exactly are strings stored in a computer?
+
+\subsection{Characters}
+
+\lstinputlisting{chars.py}
+
+\subsection{Character Functions}
+
+Let's write a function called \lstinline{char_upper} that will take a single
+character and return the uppercase version.
+
+\subsection{Strings}
+
+\lstinputlisting{strings.py}
+
+\subsection{String Functions}
+
+Let's write a function called \lstinline{str_upper} using
+\lstinline{char_upper}.
+
+\section{Searching}
+
+Write a \lstinline{contains} function and an \lstinline{index_of} function.
+
+\end{document}

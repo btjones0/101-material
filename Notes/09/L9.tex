@@ -1,0 +1,53 @@
+\documentclass[12pt]{article}
+
+\pagenumbering{gobble}
+\usepackage{mypython, mymath}
+
+\usepackage[margin=0.6in]{geometry}
+
+\begin{document}
+\begin{center}
+   \LARGE Lecture 9
+\end{center}
+
+\section*{Lists}
+
+\lstinputlisting{list_stuff.py}
+
+\noindent
+This means that we can use \lstinline{assertEqual}!  \textbf{But}, not
+\lstinline{assertAlmostEqual}\dots, \emph{so} for Lab 5, an
+\lstinline{assertListAlmostEqual} is provided!
+
+\lstinputlisting{more_lists.py}
+
+\section{List Reference Passing}
+
+However, lists are really odd/counter-intuitive in some ways when dealing with
+functions.
+
+\lstinputlisting{scope.py}
+
+\section*{Tuples}
+
+\lstinputlisting{tuple_stuff.py}
+
+\section{Maps}
+
+Let's write a function dealing with lists!  Given a list, write a function that
+computes (and returns) a new list with double the entries in the original list.
+(Do first with while loop, then for, then list comprehension.  Mention that
+list comprehensions are inspired by mathematical notation.  Don't forget to
+write tests!)  We call this kind of function a map.  It's mapping each value in
+the old list to a corresponding value in the new list via some kind of
+function.  We're ``mapping'' the doubling function onto the list.
+
+\section{Filters}
+
+Let's write more functions dealing with lists!  Given a list, write a function
+that computes (and returns) a new list with only the even values from the
+original list.  (Do first with while loop, then for, then list comprehension.
+Don't forget to write tests!)  We call this kind of function a filter.  It's
+filtering out all the undesired elements.
+
+\end{document}

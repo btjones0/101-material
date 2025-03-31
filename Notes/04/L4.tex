@@ -1,0 +1,109 @@
+\documentclass[12pt]{article}
+
+\pagenumbering{gobble}
+\usepackage{mypython, mymath}
+
+\usepackage[margin=0.6in]{geometry}
+
+\begin{document}
+\begin{center}
+   \LARGE Lecture 4
+\end{center}
+
+\setcounter{section}{-1}
+\section{Queries}
+
+\section{Main Motivation and TDD}
+
+Make a file \lstinline{funcs.py}.  Make two functions:
+
+\lstinputlisting[frame=single]{funcs.py}
+
+\noindent
+Now I can write and run the tests without having actually written the
+functions!  Let's write some tests!
+
+\lstinputlisting[frame=single]{funcs_tests.py}
+
+\noindent
+At this point all the tests will fail.  That's fine!  They should!  We never
+wrote them!  But now we can write the functions little by little and we'll know
+we're done when all the tests pass!  So now we write \lstinline{f}.  (Do this.)
+Before even running the tests, we may want to verify that the function kind of
+does what we expect, a sanity check of sorts.  So let's add a \lstinline{print}
+call.  Okay, it looks like its working.  Let's run the tests!
+\vspace{2ex}
+
+
+\noindent
+Uh oh!  There's some garbage being printed in my testing output!  That's our
+print!  Let's put the prints in \lstinline{main}!
+
+\section*{Mutation}
+
+Variables can change values!  Think of \lstinline{x} as a box that can only
+contain one value.  (Draw this!)
+
+\begin{lstlisting}
+>>> x = 5
+>>> print(x)
+5
+>>> x = 10
+>>> print(x)
+10
+>>> x = x + 1
+>>> print(x)
+11
+>>> x += 1
+>>> print(x)
+12
+>>> x -= 5
+>>> print(x)
+7
+\end{lstlisting}
+
+\section{Scope}
+
+Draw out the variables in different scopes in \lstinline{scope.py}.  Also
+probably mention the decimal format specifier.
+
+\section{Tracing Code}
+
+Go through \lstinline{weird.py} one line at a time noting the variables at each
+line.  Put variables in parentheses if they go out of scope (and remove them
+entirely when they no longer exist).  (Have code/tracing paper printed out!)
+
+\begin{lstlisting}
+x: 8.5
+y: hello
+\end{lstlisting}
+
+\begin{lstlisting}
+x: 5
+y: hi
+\end{lstlisting}
+
+\section{Loops}
+
+What if I want to write code that repeats?  Let's say I want to print out the
+numbers from $10 \searrow 1$.  I could do something like:
+
+\begin{lstlisting}
+print(10)
+print(9)
+#/*\vdots*/
+print(1)
+\end{lstlisting}
+
+\noindent
+But\dots that's a lot of typing.  I don't want to do that\dots  Instead, we can
+use loops!
+
+\begin{lstlisting}
+counter = 10
+while counter > 0:
+   print(counter)
+   # What would go wrong if I stopped here?
+   counter -= 1
+\end{lstlisting}
+\end{document}

@@ -1,0 +1,116 @@
+\documentclass[12pt]{article}
+
+\pagenumbering{gobble}
+\usepackage{mypython, mymath}
+
+\usepackage[margin=0.6in]{geometry}
+
+\begin{document}
+\begin{center}
+   \LARGE Lecture 3
+\end{center}
+
+\setcounter{section}{-1}
+\section{Queries}
+
+\section{More Functions}
+
+\begin{lstlisting}
+# functions can take no parameters
+def this_function_returns_five():
+   return 5
+
+# functions can also not return anything
+def print_hello():
+   print "Hello!"
+\end{lstlisting}
+
+\section{Boolean Expressions}
+
+\subsection{Boolean Operators}
+\begin{lstlisting}
+>>> 1 < 2 and 7 == 5
+False
+>>> 1 < 2 or 7 == 5
+True
+>>> not 1 < 2
+False
+\end{lstlisting}
+
+\noindent
+Talk about ``\lstinline{!=}''.
+
+\subsection{Evaluate}
+
+Show them and then vote!  While voting, talk about subsection~\ref{ssec:prec}.
+
+\subsection{Precedence Continued}\label{ssec:prec}
+\begin{itemize}
+   \item \lstinline{**}
+   \item unary \lstinline{-}
+   \item \lstinline{*}, \lstinline{/}, \lstinline{//}, \lstinline{%}
+   \item \lstinline{+}, \lstinline{-}
+   \item \lstinline{<}, \lstinline{<=}, \lstinline{>}, \lstinline{>=},
+      \lstinline{==}, \lstinline{!=}
+   \item \lstinline{not}
+   \item \lstinline{and}
+   \item \lstinline{or}
+\end{itemize}
+
+\section{Conditionals}
+
+What if we want code to only run sometimes?  We need some way to tell Python to
+only run certain code under certain circumstances.  Let's write a very basic
+guessing game!
+
+\lstinputlisting[frame=single]{guess1.py}
+
+\noindent
+For reasons that we'll probably talk more about later, it's generally good
+practice to put the \emph{main} part of your code in a function called
+\lstinline{main}.  Let's do that!
+
+\lstinputlisting[frame=single]{guess2.py}
+
+\noindent
+Let's make the game better by telling the user if they were too high or too
+low.
+
+\lstinputlisting[frame=single]{guess3.py}
+
+\newpage
+\noindent
+Python allows us to make the \lstinline{else}/\lstinline{if} syntax a little
+nicer with \lstinline{elif}.
+
+\lstinputlisting[frame=single]{guess4.py}
+
+\section{Conditional Practice}
+
+Do example code with:
+\begin{itemize}
+   \item $x = 20$, $y = 0$ (ACDF)
+   \item $x = 5$, $y = 5$ (AFG)
+   \item $x = 33$, $y = 5$ (ABDFG)
+   \item $x = 0$, $y = 0$ (AEF)
+\end{itemize}
+
+\section{Format Print}
+
+\begin{lstlisting}[language=]
+>>> import math
+>>> print("Pi is approximately", math.pi)
+Pi is approximately 3.141592653589793
+>>> print("Pi is {:.5f} to 5 decimal places.".format(math.pi))
+Pi is 3.14159 to 5 decimal places.
+>>> sqrt_2 = math.sqrt(2)
+>>> print("Pi is {:.2f} and the sqrt of 2 is {:.3f}.".format(math.pi,
+                                                             sqrt_2))
+Pi is 3.14 and the sqrt of 2 is 1.414.
+\end{lstlisting}
+
+\section{Project 1}
+
+Introduce the project.  Talk about file redirection and diff.
+
+\end{document}

@@ -1,0 +1,93 @@
+\documentclass[12pt]{article}
+
+\pagenumbering{gobble}
+\usepackage{mypython, mymath}
+
+\usepackage[margin=0.6in]{geometry}
+
+\begin{document}
+\begin{center}
+   \LARGE Lecture 16
+\end{center}
+
+\section*{Queries}
+
+\textbf{In later section, remember to talk about \lstinline{raise}!!!}
+
+\section{Sorting}
+
+Both sections described selection sort, so we're going with that!
+\[[25,\ 13,\ -100,\ -12,\ 60,\ 31,\ -76,\ 2]\]
+
+\begin{itemize}
+   \item Find the minimum (select it), swap with index 0
+   \item Repeat for spots \(1,\ 2,\ \dots,\ n-1\)
+\end{itemize}
+
+\noindent
+Go through example above; write out code.
+
+\lstinputlisting{sel_sort.py}
+
+\section{PPM}
+
+Let's learn about ppm files!  Specifically the P3 format of ppm files!  The ppm
+P3 format is a plain text format for storing images.  Let's take a look at
+making an image!
+
+\newpage
+
+\begin{lstlisting}
+P3
+3 1
+255
+255 0 0 # red
+0 255 0 # green
+0 0 255 # blue
+\end{lstlisting}
+
+\noindent
+Now let's make one that's a little bigger!
+
+\begin{lstlisting}
+P3
+3 2
+255
+255 0 0   # red
+0 255 0   # green
+0 0 255   # blue
+255 255 0 # yellow
+255 0 255 # magenta
+0 255 255 # cyan
+\end{lstlisting}
+
+\noindent
+Mess with components per line, show them that it makes no difference/they'll
+need to be able to handle it.  Then intro Program 6.
+
+\section*{Truth Tables!}
+
+Start simple: \(p\ \text{or}\ q\)
+
+\noindent
+Get harder: \(\text{not}\ ((\text{not}\ p\ \text{or}\ q)\ \text{and}\
+(\text{not}\ q\ \text{or}\ r))\ \text{or}\ (\text{not}\ p\ \text{or}\ r)\)
+
+\section*{Methods?}
+
+\section*{Git?}
+
+\section*{Insertion Sort?}
+
+\begin{itemize}
+   \item Start at index 1, swap with lower one until it gets to the correct
+      location (insert it).
+   \item Each iteration, the first \(i\) elements of the list are sorted, each
+      subsequent element is then inserted.
+\end{itemize}
+
+Go through example above.  Write out code?
+
+\lstinputlisting{ins_sort.py}
+
+\end{document}

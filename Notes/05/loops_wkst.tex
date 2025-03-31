@@ -1,0 +1,107 @@
+\documentclass[12pt]{article}
+
+\pagenumbering{gobble}
+\usepackage{mypython, mymath}
+
+\usepackage[margin=0.6in]{geometry}
+
+\begin{document}
+\begin{center}
+   \LARGE Loops!
+\end{center}
+
+\begin{enumerate}
+   \item Write a snippet of code to prompt the user for a number.  ``Count'' up
+      to the input number starting from the number 1.  Sample output is shown
+      below (user input in bold).  Use a Python while-loop to do the number
+      printing.
+
+      \begin{lstlisting}[language=]
+   Enter a number: #/*\textbf{6}*/
+   1
+   2
+   3
+   4
+   5
+   6
+      \end{lstlisting}
+
+      \vfill
+
+   \item Write a snippet of code to prompt the user for a number.  ``Count''
+      down to zero from the input number.  Sample output is shown below (user
+      input in bold).  Use a Python while-loop to do the number printing.
+
+      \begin{lstlisting}[language=]
+   Enter a number: #/*\textbf{6}*/
+   6
+   5
+   4
+   3
+   2
+   1
+   0
+      \end{lstlisting}
+
+      \vfill
+      \newpage
+
+   \item Write a snippet of code to keep track of canned food drive donations.
+      Using a Python while-loop, prompt the user for how many cans they will
+      donate.  Keep asking for donations until you receive at least 100 cans.
+      Then print out how many ``people'' donated and the total cans collected.
+      A sample run is below (user input in bold):
+
+      \begin{lstlisting}[language=]
+   How many cans? #/*\textbf{12}*/
+   How many cans? #/*\textbf{35}*/
+   How many cans? #/*\textbf{3}*/
+   How many cans? #/*\textbf{15}*/
+   How many cans? #/*\textbf{7}*/
+   How many cans? #/*\textbf{21}*/
+   How many cans? #/*\textbf{9}*/
+   Total donations: 7
+   Total number of cans: 102
+      \end{lstlisting}
+
+      \vfill
+
+   \item Write a Python while loop that says hello to the user.  Then ask the
+      user if they would like another hello.  If they type a `y' for yes, say
+      hello again and then ask them if they would like another hello.  If they
+      type anything else, say goodbye and quit the program.  A sample run is
+      below (user input in bold):
+
+      \begin{lstlisting}[language=]
+   Hello!
+   Again (y/n)? #/*\textbf{y}*/
+   Hello!
+   Again (y/n)? #/*\textbf{y}*/
+   Hello!
+   Again (y/n)? #/*\textbf{n}*/
+   Goodbye!
+      \end{lstlisting}
+
+      \vfill
+      \newpage
+
+   \item Write a Python while-loop that displays the squares of all the numbers
+      from 0 to a given number (for example all the integers between 0 and 3
+      inclusive). The end of the range will be specified in an integer named
+      ``last''. Assume this variable has been declared and initialized earlier
+      in the program to the desired values (for example: last = 3;)
+      Additionally, keep track of the sum of all the squares and display the
+      sum after displaying the squares. Declare any additional variables that
+      you need.  Make sure that the output matches the example lines below:
+
+      \begin{lstlisting}[language=]
+   The number 0 squared is 0.
+   The number 1 squared is 1.
+   The number 2 squared is 4.
+   The number 3 squared is 9.
+   The sum of the squares is 14.
+      \end{lstlisting}
+\end{enumerate}
+
+
+\end{document}

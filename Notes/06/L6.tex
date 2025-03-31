@@ -1,0 +1,98 @@
+\documentclass[12pt]{article}
+
+\pagenumbering{gobble}
+\usepackage{mypython, mymath}
+
+\usepackage[margin=0.6in]{geometry}
+
+\begin{document}
+\begin{center}
+   \LARGE Lecture 6
+\end{center}
+
+\setcounter{section}{-1}
+\section{Queries}
+
+\section*{Lazy Import (in 1st section)}
+
+There's another way of imported.
+
+\begin{lstlisting}
+from math import sqrt
+\end{lstlisting}
+
+\noindent
+Upside: less typing, downside: pollute namespace
+
+\section{For Loops}
+
+For loops are another kind of Python loop.  They are great if we know in
+advance how many times we want to do things.
+
+\begin{lstlisting}
+for count in range(10):
+   print(count)
+\end{lstlisting}
+
+\noindent
+Let's revisit problems 1 and 2 from the loops worksheet.
+
+\begin{lstlisting}
+num = int(input("Enter a number: ")) # Number 1
+for x in range(1, num + 1):
+   print(x)
+
+num = int(input("Enter a number: ")) # Number 2
+for x in range(num, -1, -1):
+   print(x)
+\end{lstlisting}
+
+\noindent
+Numbers 3 and 4 are not a good fit for a for loop; why?  But number 5 is!  Try
+it on your own!  Come show me in office hours!
+
+\section{Nested Loops}
+
+We can have loops inside other loops!  Let's look at a few and see if we can
+figure out what they do.
+
+\section*{String Operations}
+
+We can add strings!  We can multiply strings and ints!
+
+\section{Default Values}
+
+Let's write a distance function!  (Then modify it to default to distance from
+origin!)
+
+\lstinputlisting[frame=single]{funcs.py}
+
+\lstinputlisting[frame=single]{funcs_tests.py}
+
+\section*{Lists}
+
+\begin{lstlisting}
+my_list = [2, 3, 7.1, "hi"]
+my_list
+my_list[0]
+my_list[3]
+my_list[4]
+my_list[100] # Guesses???
+my_list[-2] # Guesses???
+
+my_list[2] = -45.1 # Lists are mutable!!!
+my_list
+my_list.append(9) # we can add more stuff to the end!
+
+list2 = [8, 0]
+my_list + list2
+my_list
+list2
+my_list = my_list + list2
+my_list
+my_list * 2
+my_list
+my_list *= 2
+\end{lstlisting}
+
+\end{document}

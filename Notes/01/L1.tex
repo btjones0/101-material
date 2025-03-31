@@ -1,0 +1,134 @@
+\documentclass[12pt]{article}
+
+\pagenumbering{gobble}
+\usepackage{mypython, mymath}
+
+\usepackage[margin=0.6in]{geometry}
+
+\begin{document}
+\begin{center}
+   \LARGE Lecture 1
+\end{center}
+\section{Basic Unix Commands}
+
+That is, how to use the black box called terminal.
+
+\begin{lstlisting}[language=bash]
+ls
+pwd
+ls -a # (come back to . and ..)
+ls -l
+ls -al
+mkdir CPE101
+ls # (with flags?)
+cd CPE101
+ls
+pwd
+mkdir Lecture01
+cd Lecture01
+ls
+pwd
+cd .. # (oh!  magic!, explain ..)
+cd ~
+cd /Users/btjones/CPE101/Lecture01
+cp ~/Files/smallfile . # (explain .)
+ls -l
+cat smallfile
+cp ~/Files/largefile .
+ls -l
+cat largefile
+less largefile # (q to quit)
+rm smallfile # (be VERY careful with this!)
+cp ~/Files/smallfile .
+mv smallfile ..
+cd ..
+ls
+mv smallfile ..
+cd ..
+ls
+mv smallfile Lecture01
+cd Lecture01
+mv smallfile newfile # (can use mv to rename)
+man mv # (forget how to use mv?  q to quit)
+\end{lstlisting}
+
+\section{Python}
+
+We're using Python 3 vs 2, there are some minor differences that we won't talk
+about.
+
+\noindent
+Run interpretor, we can use it as a calculator!
+
+\begin{lstlisting}
+2 + 2
+3 * 4
+10 - 26
+7 / 2
+7 // 2
+x = 5 # variables!  math!
+x * 3
+y = 2 * x + 4
+y
+greeting = "Hello" # we can store text!  we call these strings!
+x > 2
+y < 4
+\end{lstlisting}
+
+\noindent
+Variables, assigning values to them, show as a box.  Use variable names that
+mean something!  Some words cannot be used.
+
+\section{Operations}
+
+Python has a bunch of operators (+, -, *, /, \%, //, **).
+
+\noindent
+What is the value of \lstinline{3 + 2 * 4}
+
+\noindent
+What about \lstinline{3 + 2      * 4}?
+
+\noindent
+\lstinline{(3 + 2)*4}?
+
+\subsection{Order of Operation}
+
+\begin{itemize}
+   \item Parentheses
+   \item \lstinline{**} (right -> left)
+   \item unary \lstinline{-} (like \lstinline{-5})
+   \item *, /, //, \% (left -> right)
+   \item +, - (left -> right)
+\end{itemize}
+
+\subsection{Evaluating Expressions}
+
+Have them guess:
+\begin{itemize}
+   \item \lstinline{-3**2+7.0//2 # = -6.0}
+   \item \lstinline{3 + 6 // 4 - 2 ** 2 + 8 / 2.0 / (2 + 1) - 25 % 4 # = 0.3333333333}
+   \item \lstinline{8 / 3 # = 2.6666666666666665}
+\end{itemize}
+
+\section{Editing Files}
+
+We can also put code in a file!  Python files end with the extension
+\lstinline{.py}.
+
+\begin{lstlisting}[language=bash]
+cp ~/Files/code.py .
+cat code.py
+python3 code.py
+\end{lstlisting}
+
+\section{Testing}
+
+\begin{lstlisting}
+cp ~/Files/testing.py .
+\end{lstlisting}
+
+\noindent
+Talk about unit testing!  Talk about floats sucking!
+
+\end{document}

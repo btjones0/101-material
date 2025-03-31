@@ -1,0 +1,120 @@
+\documentclass[12pt]{article}
+
+\pagenumbering{gobble}
+\usepackage{mypython, mymath}
+
+\usepackage[margin=0.6in]{geometry}
+
+\begin{document}
+\begin{center}
+   \LARGE Lecture 2
+\end{center}
+
+\setcounter{section}{-1}
+\section{Queries!}
+
+Talk about comments.  For query 4, explain multiple tests!
+
+\section{Expressions}
+
+\subsection{Casting}
+
+\begin{lstlisting}
+x = 3.8
+int(x)
+x
+\end{lstlisting}
+
+\subsection{Evaluate}
+
+Show them and then vote!  \textbf{Note: floats have at least one decimal place
+of precision, do this on your midterms!}
+
+\section{Multiple Files}
+
+So far everythin we've done has been in one file.  This is \emph{very} unlikely
+for large scale projects.  Programs could have 100s of files.  In Python, each
+file is called a module.
+
+\noindent
+Show \lstinline{my_time.py}.  What if I want to use these in a different file?
+
+\noindent
+Make \lstinline{use_time.py}
+
+\begin{lstlisting}
+import my_time
+
+print("The number of seconds in a day is", seconds_per_day)
+\end{lstlisting}
+
+\noindent
+This won't work!  I didn't say where \lstinline{seconds_per_day} came from!
+Add module name and \lstinline{.}
+
+\section{Functions}
+
+\subsection{Built-ins}
+Hopefully you've already seen the idea of functions in a math class at some
+point.  Let's take a look at how to use and then define our own functions.
+Python already has a bunch of functions built in.
+
+\begin{lstlisting}
+len("Monday")
+abs(-10)
+int(32.9)
+float(1)
+sqrt(4) # doesn't exist
+# But!  There is a sqrt function in the math module
+import math
+math.sqrt(4)
+# The math module has a lot more stuff
+# some of which we will see later
+\end{lstlisting}
+
+\subsection{Defining Functions}
+
+We can also define our own functions!  Why should we?  Write code once, test
+it, reuse it.  Don't repeat code, put it in a function.  In general, a function
+should do \emph{one} thing and it should do that one thing really well.
+
+\noindent
+Let's make \(f(x) = 3x + 2\) in Python!  (Put in \lstinline{funcs.py})
+\textbf{\emph{TALK ABOUT INDENTATION!!}}
+
+\begin{lstlisting}
+def f(x):
+   return 3*x + 2
+\end{lstlisting}
+
+\noindent
+Python functions can be a little more general than mathematical ones.  Write
+\lstinline{is_zero} function.  Again, variable names can be verbose.  Introduce
+\lstinline{==} (and \lstinline{!=} I guess?)
+
+\begin{lstlisting}
+def is_zero(value):
+   return value == 0
+\end{lstlisting}
+
+\noindent
+Write \lstinline{area_of_rectangle(x1, y1, x2, y2)}.
+
+\hfill
+\begin{tikzpicture}
+   \draw (0, 3) node[anchor=north east] {($x_1$, $y_1$)}
+   rectangle (4, 0) node[anchor=south west] {($x_2$, $y_2$)};
+\end{tikzpicture}
+
+\begin{lstlisting}
+def area_of_rectangle(x1, y1, x2, y2):
+   width = abs(x2 - x1)
+   height = abs(y1 - y2)
+   return width * height
+\end{lstlisting}
+
+\noindent
+Then make a \lstinline{use_funcs.py} and \lstinline{test_funcs.py}
+
+
+\end{document}

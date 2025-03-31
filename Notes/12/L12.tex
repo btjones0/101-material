@@ -1,0 +1,112 @@
+\documentclass[12pt]{article}
+
+\pagenumbering{gobble}
+\usepackage{mypython, mymath}
+
+\usepackage[margin=0.6in]{geometry}
+
+\begin{document}
+\begin{center}
+   \LARGE Lecture 12
+\end{center}
+
+\section*{Queries}
+
+\section{Classes}
+
+So far, we've seen several data types.  But real world things are hard to store
+in most of these.  What if I want to represent a person in code?  I could keep
+each piece as a separate variable (e.g., name, birth date, country of origin,
+et cetera).  But that quickly becomes unmanageable.
+
+Let's start a little smaller and then work our way up.  Let's make a 2D point
+type!  We could represent the x \& y coordinates separately as we've seen
+before, but we can do better; we should store them together!
+
+\lstinputlisting{point.py}
+
+\noindent
+We've defined a new data type!!!  \emph{But}, we still haven't made any points.
+The class definition can be thought of as blueprint.  We've described what a
+point will be, now we just have to make one.  Let's do it!
+
+\lstinputlisting{use_point.py}
+
+\noindent
+And similar to before, we can do a fancier import.
+
+\lstinputlisting{use_point2.py}
+
+\section{Classes 2}
+
+Let's do another example, this time we'll model a pet.
+
+\newpage
+\lstinputlisting{pet.py}
+
+\noindent
+We can use the \lstinline{Pet} class the same way that we used the
+\lstinline{Point} class.
+
+\lstinputlisting{use_pet.py}
+
+\section{Object Equality}
+
+Let's look at some code!
+
+\lstinputlisting{equality.py}
+
+\noindent
+When we define a new type, we have to tell Python what it means to be
+``equal''.  By default, Python has no idea; we have to tell it!
+
+\lstinputlisting{point_eq.py}
+
+\noindent
+Show that this works.  But what about floats!  Show that this doesn't work.
+Sometimes we want to be a little looser with our definition of ``equal''.
+Let's write an almost equal!
+
+\lstinputlisting{utility.py}
+
+\noindent
+Use in \lstinline{__eq__}.
+
+\section{Exceptions}
+
+Things go wrong.  And we need to be able to deal with that.  What happens when
+I do the following?
+
+\lstinputlisting{exceptions.py}
+
+\noindent
+It crashes!  More specifically, it raises an exception!  More specifically, it
+raises a \lstinline{TypeError} (this will be important in a moment).  But what
+if I don't want the program to crash just because of a slight error?  I can
+tell python to `try' to do something and do something else of an exception is
+raised.
+
+\lstinputlisting{exceptions2.py}
+
+\noindent
+Here I'm saying to `try' to do a possibly unsafe operation, and if a
+\lstinline{TypeError} occurs, instead do something else.
+
+Let's look at a practical usage!  Let's write some code that asks the user for
+an integer.  If the user doesn't enter an integer, we'll display an error
+message and ask again.
+
+\lstinputlisting{get_num.py}
+
+\noindent
+We'll go a little more in depth with this later (after midterm).
+
+\section*{Finding Substrings}
+
+Go over \lstinline{str.find}.
+
+\section*{Project 4}
+
+Intro Project 4.
+
+\end{document}

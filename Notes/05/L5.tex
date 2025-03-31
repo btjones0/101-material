@@ -1,0 +1,69 @@
+\documentclass[12pt]{article}
+
+\pagenumbering{gobble}
+\usepackage{mypython, mymath}
+
+\usepackage[margin=0.6in]{geometry}
+
+\begin{document}
+\begin{center}
+   \LARGE Lecture 5
+\end{center}
+
+\setcounter{section}{-1}
+\section{Queries}
+
+\section{More Loops}
+
+Let's write more loops!  In particular, let's write a loop that will continue
+until the user wants it to stop.  (Ask them how to do it!)
+
+\lstinputlisting{more_loops.py}
+
+\noindent
+Now let's write a function that takes a number as input.  It then asks the user
+for values until they total more than that number.  Then we'll print the total.
+
+\lstinputlisting{more_loops2.py}
+
+\section{Loops Practice}
+
+Give loops worksheet!  Go over worksheet!  For 5, spend some time with
+padding options.
+
+\section{Keyword Arguments (for \lstinline{print})}
+
+There have been many questions about how to print without the line break at the
+end.  Let's talk about that!  By default, Python always goes onto the next line
+after a print.  But we can tell Python not to print the newline character at
+the end.
+
+\lstinputlisting{printing.py}
+
+\noindent
+Here I'm telling Python to print nothing (an empty string) after it prints what
+I told it to print.  If I set \lstinline{end} to be a newline character (as
+seen in Lab 1), I would get the same behaviour as before.
+
+\section{Nested Loops}
+
+We can have loops inside other loops!  Let's look at a few and see if we can
+figure out what they do.
+
+\section*{Lazy Import}
+
+There's another way of importing.
+
+\begin{lstlisting}
+from math import sqrt
+\end{lstlisting}
+
+\noindent
+Upside: less typing, downside: pollute namespace
+
+\section*{Project 2}
+
+Go over spec, show them what they get, show them executable.  Talk about I/O
+testing.
+
+\end{document}

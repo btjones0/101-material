@@ -1,0 +1,62 @@
+\documentclass[12pt]{article}
+
+\pagenumbering{gobble}
+\usepackage{mypython, mymath}
+
+\usepackage[margin=0.6in]{geometry}
+
+\begin{document}
+\begin{center}
+   \LARGE Lecture 14
+\end{center}
+
+\section*{Queries}
+
+\section{Printing Objects}
+
+Some of you may have noticed that when you print an object (an instance of a
+class) like a point, Python does something weird/not useful.  Python is telling
+us the location of the Point in computer memory.  This could be useful
+sometimes but often it isn't very.  Let's change it!
+
+\lstinputlisting{pet.py}
+
+\noindent
+Play around with \lstinline{str}/\lstinline{repr} method.  Show that
+\lstinline{str} is called by print and \lstinline{repr} is called on command
+line.
+
+\section{Dictionaries}
+
+Uncomment one section at a time
+
+\lstinputlisting{dictionary.py}
+
+\section{Exceptions}
+
+What happens when I do the following?
+
+\lstinputlisting{get_num.py}
+
+\noindent
+To ask a slightly different question, what could go wrong?  What if I type in
+``five''?  What happens then?
+
+It crashes!  More specifically, it raises an exception!  More specifically, it
+raises a \lstinline{ValueError} (this will be important in a moment).  But what
+if I don't want the program to crash just because of a slight error?  I can
+tell python to `try' to do something and do something else of an exception is
+raised.
+
+\lstinputlisting{get_num2.py}
+
+\noindent
+Let's modify the code so that I keep asking for a value until it's an integer.
+
+\lstinputlisting{get_num3.py}
+
+\noindent
+Here I'm saying to `try' to do a possibly unsafe operation, and if a
+\lstinline{ValueError} occurs, instead do something else.
+
+\end{document}

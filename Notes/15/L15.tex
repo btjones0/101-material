@@ -1,0 +1,91 @@
+\documentclass[12pt]{article}
+
+\pagenumbering{gobble}
+\usepackage{mypython, mymath}
+
+\usepackage[margin=0.6in]{geometry}
+
+\begin{document}
+\begin{center}
+   \LARGE Lecture 15
+\end{center}
+
+\section*{Queries}
+
+\section{Command line Arguments}
+
+We've seen lots of commands (ls, mkdir, cd, cp, cat, less, rm, mv) that take
+input via the command line; they don't make you run them and then wait for
+input.  Let's see how to do that!
+
+\lstinputlisting{cmdline.py}
+
+\noindent
+Great!  Let's use our new found knowledge to change an earlier example.
+
+\section{I/O Example with Command Line Args and Error Handling}
+
+Let's write a piece of code that takes the name of a file as a command line
+argument.  It will then print out the line along with its line number.
+
+\lstinputlisting{files1.py}
+
+\noindent
+This will work great\dots as long as the user gives me the name of a file
+(otherwise \lstinline{IndexError}).  And not just any file, it also has to
+exist (otherwise \lstinline{FileNotFoundError}), and I have to have the
+permission to read it (otherwise \lstinline{PermissionError}).  So\dots let's
+try again and handle some errors!
+
+\lstinputlisting{files2.py}
+
+\noindent
+Now, if an exception happens, we handle it\dots but we have no idea \emph{what}
+went wrong.  We can tell Python to handle each type of exception differently!
+
+\lstinputlisting{files3.py}
+
+\section{Finally}
+
+In addition to what we've already seen, there is another thing we can do with
+exception handling, the \lstinline{finally} clause.
+
+
+\lstinputlisting{fin.py}
+
+\noindent
+Code in the \lstinline{finally} will always happen, whether or not an exception
+was raised.  It will also run whether or not we handled the exception.
+(\lstinline{raise} various errors to demonstrate.)
+
+\section{Sorting}
+
+If time, talk about insertion and/or selection sort.  Ask the audience how to
+sort a list and go with it?
+\[[25,\ 13,\ -100,\ -12,\ 60,\ 31,\ -76,\ 2]\]
+
+\subsection{Insertion Sort}
+
+\begin{itemize}
+   \item Start at index 1, swap with lower one until it gets to the correct
+      location (insert it).
+   \item Each iteration, the first \(i\) elements of the list are sorted, each
+      subsequent element is then inserted.
+\end{itemize}
+
+Go through example above.  Write out code?
+
+\lstinputlisting{ins_sort.py}
+
+\subsection{Selection Sort}
+
+\begin{itemize}
+   \item Find the minimum (select it), swap with index 0
+   \item Repeat for spots \(1,\ 2,\ \dots,\ n-1\)
+\end{itemize}
+
+Go through example above.  Write out code?
+
+\lstinputlisting{sel_sort.py}
+
+\end{document}

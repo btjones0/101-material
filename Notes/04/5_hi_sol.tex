@@ -1,0 +1,50 @@
+\documentclass[12pt]{article}
+
+\pagenumbering{gobble}
+\usepackage{mybase, mypython, mymath}
+
+\usepackage[margin=0.6in]{geometry}
+
+\begin{document}
+\begin{center}
+   \LARGE Tracing Through Code Solution
+\end{center}
+
+The following assumes user input of \lstinline{5.0} followed by \lstinline{hi}.
+\vspace{2ex}
+
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{l r @{.} l c c c c c l}
+   \toprule
+   Line No. & \multicolumn{2}{c}{x} & y & z & m & n & p & output\\\midrule
+   2  &  5&0  &&&&&& \texttt{x:\ }\\\midrule
+   3  &  5&0  &  `hi'  &     &     &     && \texttt{y:\ }\\\midrule
+   19 & (5&0) & (`hi') &     & 8.0 &     &&              \\\midrule
+   20 & (5&0) & (`hi') &     & 8.0 & 4.0 &&              \\\midrule
+   21 & (5&0) & (`hi') &     & 8.0 & 4.0 &&              \\\midrule
+   5  &  5&0  &  `hi'  & 4.0 &     &     &&              \\\midrule
+   7  &  5&0  &  `hi'  & 4.0 &     &     &&              \\\midrule
+   10 &  5&0  &  `hi'  & 4.0 &     &     &&              \\\midrule
+   12 &  5&0  &  `hi'  & 4.0 &     &     &&              \\\midrule
+   13 & 25&0  &  `hi'  & 4.0 &     &     &&              \\\midrule
+   17 & 25&0  &  `hi'  & 4.0 &     &     && \texttt{x:\ 25.0, y:\ hi, z:\ 4.00}\\
+   \bottomrule
+\end{tabular}
+\vspace{2ex}
+
+Some notes:
+\begin{itemize}
+   \item If you prefer, you may start at line 1 followed by lines 19, 23, 29,
+      30, and then 2.  Nothing interesting happens until line 2, so I start
+      there.
+   \item I also skip lines 4, 6, 9, and 16 as nothing happens (there is no
+      code) on those lines.
+   \item The code is on the next page (with line numbers this time) in case you
+      lost/can't find it.
+\end{itemize}
+
+\newpage
+
+\lstinputlisting[numbers=left]{weird.py}
+
+\end{document}
